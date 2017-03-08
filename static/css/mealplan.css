@@ -1,0 +1,269 @@
+div.p-info-wrapper div.user-profile div.u-info-wrapper div {
+    display: block;
+    font-size: 21px;
+}
+
+div.p-info-wrapper div.user-profile div.u-info-wrapper div:last-of-type {
+    color: #8f9092;
+}
+
+div.s-wrapper div.d-total-wrapper {
+    border: 1px solid #eaeaea;
+    padding: 15px;
+    border-radius: 3px;
+}
+
+div.s-wrapper div.s-title {
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 15px;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+div.s-wrapper div.c-by-category {
+    padding-top: 15px;
+    font-size: 17px;
+}
+
+div.s-wrapper div.c-by-category {
+    color: #3bbb71;
+}
+
+div.s-wrapper ul.meals-list {
+    list-style: none;
+    margin: 0px;
+}
+
+div.s-wrapper ul.meals-list li div.s-info-wrapper {
+    border: 1px solid #eaeaea;
+    padding: 15px;
+    border-radius: 3px;
+}
+
+div.s-wrapper div.s-meal-wrapper {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eaeaea;
+    display: table;
+    width: 100%;
+}
+
+div.s-wrapper div.s-meal-wrapper div.s-img-wrapper,
+div.s-wrapper div.s-meal-wrapper div.s-ingredients {
+    display: table-cell;
+}
+
+div.s-wrapper div.s-meal-wrapper div.s-ingredients {
+    padding-left: 15px;
+    vertical-align: top;
+    font-size: 17px;
+    width: 100%;
+    position: relative;
+}
+
+div.s-wrapper div.s-meal-wrapper div.s-ingredients ul.s-i-list {
+    color: #8f9092;
+    padding-left: 40px;
+    list-style:outside;
+}
+
+div.s-wrapper div.s-meal-wrapper div.s-ingredients ul.s-i-list li {
+    padding-bottom: 5px;
+}
+
+div.s-wrapper div.s-meal-wrapper div.s-ingredients div.s-i-title span,
+div.s-wrapper div.s-meal-wrapper div.s-ingredients ul.s-i-list li span {
+    position: absolute;
+    right: 0;
+}
+
+div.s-wrapper div.btn-wrapper {
+    padding-top: 0px;
+}
+
+div.s-wrapper div.btn-wrapper div.col-md-6:first-of-type {
+    padding-right: 1px;
+}
+
+div.s-wrapper div.btn-wrapper div.col-md-6:last-of-type {
+    padding-left: 1px;
+}
+
+div.s-wrapper div.btn-wrapper button.btn.btn-green {
+    width: 100%;
+    border-radius: 0px;
+    box-shadow: none !important;
+}
+
+div.p-info-wrapper div.btn-wrapper div.col-xs-12.col-md-6:first-of-type {
+    padding-right: 1px;
+}
+
+div.p-info-wrapper div.btn-wrapper div.col-xs-12.col-md-6:last-of-type {
+    padding-left: 1px;
+}
+
+div.p-info-wrapper div.btn-wrapper div.col-xs-12.col-md-6 button {
+    width: 100%;
+    box-shadow: none !important;
+}
+
+/*mealplan preview*/
+div.p-info-wrapper div.s-wrapper.s-w-preview {
+    border-bottom: none;
+}
+
+div.p-info-t {
+    padding-bottom: 25px;
+    font-size: 17px;
+    color: #8f9092;
+}
+
+div.s-wrapper ul.meals-list.ml-preview li div.s-info-wrapper {
+    padding:0px;
+    border: none;
+}
+
+div.s-wrapper ul.meals-list.ml-preview div.s-title {
+    border:none;
+    padding-bottom: 0px;
+}
+
+div.s-wrapper ul.meals-list.ml-preview div.s-meal-wrapper {
+    padding-top: 0px;
+    border: none;
+}
+
+div.s-wrapper ul.meals-list.ml-preview li:last-of-type div.s-meal-wrapper {
+    padding-bottom: 0px;
+}
+
+div.s-wrapper ul.meals-list.ml-preview div.s-meal-wrapper div.s-ingredients {
+    padding-left: 0px;
+}
+
+/*end mealplan preview*/
+
+/*modals*/
+div.modal-dialog {
+    width: auto;
+    max-width: 800px;
+    font-size: 17px;
+}
+
+div.modal-content {
+    border-radius: 3px;
+}
+
+div.modal-content div.modal-body div.f-wrapper {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+div.modal-content div.modal-body div.f-wrapper div.col-md-4 {
+    padding: 0px;
+}
+
+div.modal-content div.modal-body div.f-wrapper div.col-md-4 div.text-capitalize {
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 15px; 
+    padding-right: 7.5px;
+}
+
+div.modal-content div.modal-body div.f-wrapper div.col-md-4 div.i-wrapper {
+    padding-top: 15px;
+}
+
+div.modal-content div.modal-body div.f-wrapper div.col-md-4:nth-of-type(1) div.i-wrapper,
+div.modal-content div.modal-body div.f-wrapper div.col-md-4:nth-of-type(2) div.i-wrapper {
+    padding-right: 7.5px;
+}
+
+div.modal-content div.modal-body div.btn-wrapper {
+    padding-top: 15px;
+}
+
+div.modal-content div.modal-body div.btn-wrapper button {
+    width: 100%;
+    font-size: 17px;
+    height: 50px;
+}
+
+a#select-d-u {
+    display: block;
+    cursor: pointer;
+}
+
+a#select-d-u span {
+    margin-top: 10px;
+    
+    color: #8f9092
+}
+
+div.modal-content div.modal-footer {
+    text-align: left;
+    border: none;
+    padding-top: 0px;
+}
+
+@media screen and (max-width: 992px) {
+    
+    div.s-wrapper div.btn-wrapper div.col-md-6:first-of-type {
+        padding-right: 15px;
+        padding-bottom: 2px;
+    }
+
+    div.s-wrapper div.btn-wrapper div.col-md-6:last-of-type {
+        padding-left: 15px;
+    }
+    
+    div.s-wrapper div.s-meal-wrapper,
+    div.s-wrapper div.s-meal-wrapper div.s-img-wrapper, 
+    div.s-wrapper div.s-meal-wrapper div.s-ingredients {
+        display: block;
+    }
+    
+    div.s-wrapper div.s-meal-wrapper div.s-img-wrapper {
+        text-align: center;
+        padding-bottom: 15px;
+    }
+    
+    div.s-wrapper div.s-meal-wrapper div.s-ingredients {
+        padding-left: 0px;
+    }
+    
+    div.p-info-wrapper div.btn-wrapper div.col-xs-12.col-md-6:first-of-type {
+        padding-right: 15px;
+        padding-bottom: 2px;
+    }
+
+    div.p-info-wrapper div.btn-wrapper div.col-xs-12.col-md-6:last-of-type {
+        padding-left: 15px;
+    }
+    
+    /*modals*/
+    div.modal-content div.modal-body div.f-wrapper div.col-md-4 div.text-capitalize {
+        border-bottom: none;
+        padding-bottom: 0px; 
+        padding-right: 0px;
+    }
+    
+    div.modal-content div.modal-body div.f-wrapper div.col-md-4:nth-of-type(2) div.text-capitalize,
+    div.modal-content div.modal-body div.f-wrapper div.col-md-4:nth-of-type(3) div.text-capitalize {
+        padding-top: 15px;    
+    }
+    
+    div.modal-content div.modal-body div.f-wrapper div.col-md-4 div.i-wrapper {
+        padding-top: 5px;
+    }
+    
+    div.modal-content div.modal-body div.f-wrapper div.dropdown {
+        margin-top: 0px;
+    }
+    
+    div.modal-content div.modal-body div.f-wrapper div.col-md-4:nth-of-type(1) div.i-wrapper,
+    div.modal-content div.modal-body div.f-wrapper div.col-md-4:nth-of-type(2) div.i-wrapper {
+        padding-right: 0px;
+    }
+
+}

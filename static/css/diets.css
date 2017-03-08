@@ -1,0 +1,13 @@
+div.right-wrapper div.list-wrapper ul li div.action-wrapper {
+    display: table-cell;
+    padding: 15px;
+}
+
+div.right-wrapper div.list-wrapper ul li div.action-wrapper a {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+div.right-wrapper div.list-wrapper ul li div.action-wrapper a img {
+    margin: 0px;
+}

@@ -1,0 +1,85 @@
+div.p-info-wrapper div.diet-plan div.input-wrapper div.dropdown {
+    vertical-align: middle;
+}
+
+div.s-wrapper.p-t.text-center.s-w {
+    padding-bottom: 25px;
+}
+
+div.s-wrapper.p-t.text-center.s-w strong {
+    font-size: 17px;
+}
+
+div.s-wrapper.p-t.text-center div.switch {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+div.p-info-wrapper div.kitchry-scores {
+    padding-bottom: 25px;
+}
+
+div.p-info-wrapper div.scores-wrapper {
+    background: #fa3945;
+    background: -webkit-linear-gradient(left, #fa3945 , #ff972b);
+    background: -o-linear-gradient(right, #fa3945, #ff972b);
+    background: -moz-linear-gradient(right, #fa3945, #ff972b);
+    background: linear-gradient(to right, #fa3945 , #ff972b);
+    border-radius: 3px;
+    padding: 15px;
+    color: #fff;
+    font-size: 15px;
+}
+
+/*datetimepicker*/
+.bootstrap-datetimepicker-widget.dropdown-menu {
+    border: 1px solid #eaeaea;
+}
+
+.bootstrap-datetimepicker-widget table td.active, .bootstrap-datetimepicker-widget table td.active:hover {
+    background: #fa3945;
+    background: -webkit-linear-gradient(left, #fa3945 , #ff972b);
+    background: -o-linear-gradient(right, #fa3945, #ff972b);
+    background: -moz-linear-gradient(right, #fa3945, #ff972b);
+    background: linear-gradient(to right, #fa3945 , #ff972b);
+    border-radius: 2px;
+}
+
+div.date-wrapper span.input-group-addon {
+    background-color: #f5f6f8;
+    border-color: #eaeaea;
+    color: #676767;
+}
+
+div.col-xs-12.input-wrapper div.form-group {
+    margin-bottom: 0px;
+}
+
+@media screen and (max-width: 768px) {
+
+    div.p-info-wrapper div.scores-wrapper div.col-md-4:nth-of-type(1),
+    div.p-info-wrapper div.scores-wrapper div.col-md-4:nth-of-type(2) {
+        padding-bottom: 15px;    
+    }
+    
+    div.p-info-wrapper div.goals div.input-wrapper:nth-of-type(4) div.dropdown {
+        padding-top: 15px;    
+    }
+    
+}
+
+@media screen and (max-width: 992px) {
+    
+    div.p-info-wrapper div.favorite-food ul li {
+        padding-bottom: 15px;
+    }
+    
+    div.p-info-wrapper div.favorite-food ul li:nth-of-type(even) {
+        padding-left: 7.5px;    
+    }
+    
+    div.p-info-wrapper div.favorite-food ul li:nth-of-type(odd) {
+        padding-right: 7.5px;
+    }
+        
+}

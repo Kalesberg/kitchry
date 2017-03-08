@@ -1,0 +1,182 @@
+div.i-list-wrapper label {
+    padding-left: 35px;
+    color: #8f9092;
+    font-weight: normal;
+}
+
+div.i-list-wrapper div.input-wrapper:first-of-type label {
+    padding-left: 0px;
+}
+
+div.input-wrapper label img { 
+    margin-right: 5px;
+}
+
+[data-toggle="collapse"]:hover {
+    cursor: pointer;
+}
+
+div.col-xs-12.input-wrapper.f-r {
+    display: table;
+}
+
+div.col-xs-12.input-wrapper.f-r label {
+    display: table-cell;
+    width: 250px;
+    font-size: 21px;
+}
+
+div.col-xs-12.input-wrapper.f-r input {
+    width: 100%;   
+}
+
+div#content-wrapper.container-fluid div.right-wrapper div.btn-wrapper button.btn-green,
+div#content-wrapper.container-fluid div.right-wrapper div.btn-wrapper a.btn-green {
+    width: 100%;
+}
+
+div.p-info-wrapper div.btn-wrapper a.btn {
+    height: 50px;
+    font-size: 17px;
+    line-height: 37px;
+}
+
+div.s-wrapper.p-t.dv-wrapper div.segment-title div.col-md-8 div.col-md-6.text-center {
+    font-size: 17px;
+}
+
+div.s-wrapper.p-t.dv-wrapper div.input-wrapper div.col-xs-12.col-md-8 div.col-md-6:last-of-type {
+    font-size: 17px;
+    color: #8f9092;
+    padding-top: 15px;
+}
+
+div.s-wrapper.p-t.dv-wrapper div.input-wrapper:last-of-type div.col-xs-12.col-md-8 div.col-md-6:last-of-type {
+    padding-left: 0px;   
+}
+
+div.s-wrapper.p-t:nth-of-type(3) div.col-xs-12.input-wrapper label {
+    font-size: 21px;   
+}
+
+/*SELECT2-tag-support*/
+span.select2.select2-container { 
+    width: 100% !important; 
+}
+
+.select2-container--default.select2-container--focus .select2-selection--multiple, .select2-container--default .select2-selection--multiple { 
+    border-color:#eaeaea; 
+    border-radius: 3px; 
+    color: #999999;
+}
+
+.select2-container .select2-selection--multiple { 
+    min-height: 60px; 
+}
+
+li.select2-search.select2-search--inline { 
+    height: 50px; 
+}
+
+.select2-container .select2-search--inline .select2-search__field { 
+    height: 48px; 
+    width: 180px !important; 
+    padding-left: 6px;
+    font-size: 17px;
+}
+
+.select2-container--open .select2-dropdown--below, .select2-container--open .select2-dropdown--above  { 
+   border-color:#eaeaea; 
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] { 
+    color: #676767;
+    border-left: 3px solid #fa3945;;
+    background-color: transparent;
+    background-image: none;
+    transition: 0.3s ease 0s; 
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice { 
+    height: 48px;
+    border-radius: 3px; 
+    padding: 10px; 
+    background-color: #3bbb71; 
+    border-color: #3bbb71; 
+    color: #ffffff; 
+    text-transform: capitalize; 
+    font-size: 17px;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+    color: #ffffff;
+}
+
+.select2-search__field {
+    font-size: 17px;
+}
+
+input.select2-search__field::-webkit-input-placeholder {
+    font-style: italic;
+    color: #c6ccd7;
+    opacity: 1;
+}
+input.select2-search__field:-moz-placeholder {
+    font-style: italic;
+    color: #c6ccd7;
+    opacity: 1;
+}
+input.select2-search__field::-moz-placeholder {
+    font-style: italic;
+    color: #c6ccd7;
+    opacity: 1;
+}
+input.select2-search__field:-ms-input-placeholder {  
+    font-style: italic; 
+    color: #c6ccd7;
+    opacity: 1;
+}
+
+li.select2-results__option {
+    padding: 12px 10px; 
+    color: #8f9092;
+    text-transform: capitalize; 
+}
+
+.select2-container--default .select2-results__option[aria-selected="true"] { 
+    background-color: #f5f6f8; 
+}
+
+.select2-results { 
+    overflow: hidden; 
+    max-height: 150px; 
+    font-size: 17px;
+}
+
+@media screen and (max-width: 992px) {
+    
+    div#content-wrapper.container-fluid div.right-wrapper div.btn-wrapper div.col-xs-12.col-md-6:first-of-type button.btn-green {
+        margin-bottom: 15px;    
+    }
+    
+    div.col-xs-12.input-wrapper div.col-xs-12.col-md-8.p-l-50 {
+        padding-left: 15px;
+    }
+    
+    div.col-xs-12.input-wrapper.f-r label {
+        display: block;
+        width: auto;
+    }
+    
+    div.s-wrapper.p-t.dv-wrapper div.input-wrapper div.col-xs-12.visible-xs.visible-sm label, 
+    div.s-wrapper.p-t.dv-wrapper div.input-wrapper label.text-capitalize.visible-xs.visible-sm {
+        padding-top: 15px;
+        color: #8f9092;
+        font-weight: normal !important;
+    }
+    
+    div.s-wrapper.p-t.dv-wrapper div.input-wrapper:last-of-type div.col-xs-12.col-md-8 div.col-md-6:last-of-type {
+        padding-left: 15px;   
+    }
+    
+}

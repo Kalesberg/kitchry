@@ -1,0 +1,346 @@
+/*section landing page*/
+div#content-wrapper.container-fluid div.right-wrapper h1 {
+    margin: 0px;
+    font-size: 25px;
+    line-height: 1;
+}
+
+div#content-wrapper.container-fluid div.right-wrapper h1 img {
+    margin-right: 5px;
+}
+
+div.right-wrapper div.controls-wrapper div.search-wrapper {
+    padding-top: 25px;
+}
+
+div.right-wrapper div.controls-wrapper div.search-wrapper input {
+    border-right: none;
+}
+
+div.right-wrapper div.controls-wrapper div.search-wrapper span {
+    border: 1px solid #eaeaea;
+    border-left: none;
+    border-radius: 0px 3px 3px 0px;
+}
+
+div#content-wrapper.container-fluid div.right-wrapper div.controls-wrapper button.btn-green {
+    width: 100%;
+    padding: 15px;
+}
+
+div.right-wrapper div.list-wrapper ul {
+    margin: 0px;
+}
+
+div.right-wrapper div.list-wrapper ul li {
+    border: 1px solid #eaeaea;
+    overflow: hidden;
+    border-radius: 3px;
+    margin-bottom: 25px;
+}
+
+div.right-wrapper div.list-wrapper ul li:last-of-type {
+    margin-bottom: 0px;
+}
+
+div.right-wrapper div.list-wrapper ul li div.l-img-wrapper,
+div.right-wrapper div.list-wrapper ul li div.u-info-wrapper {
+    display: table-cell;
+}
+
+div.right-wrapper div.list-wrapper ul li div.u-info-wrapper {
+    vertical-align: middle;
+    padding-left: 15px;
+    width: 100%;
+}
+
+div.right-wrapper div.list-wrapper ul li div.u-info-wrapper div.i-title {
+    font-size: 17px;
+}
+
+div.right-wrapper div.list-wrapper ul li div.u-info-wrapper div.i-desc {
+    color:#999999;
+}
+
+div.pagination-wrapper ul.pagination {
+    margin: 0px;
+    padding: 25px 25px 0px 25px;
+}
+
+div.pagination-wrapper ul.pagination li {
+    vertical-align: bottom;
+}
+
+.pagination > li:first-child > a, .pagination > li:first-child > span {
+    border-radius: 3px 0px 0px 3px;
+}
+
+.pagination > li:last-child > a, .pagination > li:last-child > span {
+    border-radius: 0px 3px 3px 0px;   
+}
+
+.pagination > li > a, .pagination > li > span {
+    border-color: #eaeaea;
+}
+
+.pagination > li > a, .pagination > li > span {
+    color:#999999;
+}
+
+.pagination > li > a:focus, .pagination > li > a:hover, .pagination > li > span:focus, .pagination > li > span:hover {
+    color: #fa3945;
+    background-color: transparent;
+    border-color: #eaeaea;
+}
+
+/*section details page*/
+div.profile-img-wrapper {
+    border: 1px dashed #cfcfcf;
+    border-radius: 3px;
+    padding: 4px;
+    transition: 0.2s;
+    background-color:#f5f6f8; 
+    color:#8f9092;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    vertical-align: middle;
+    background-image: url(../images/icons/add-img.svg);
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: inline-block;
+}
+
+div.profile-img-wrapper img {
+    width: 90px;
+    height: 90px;
+}
+
+div.p-info-wrapper div.user-profile,
+div.p-info-wrapper div.s-wrapper {
+    border-bottom: 1px solid #eaeaea;
+}
+
+div.p-info-wrapper div.segment-title {
+    font-size: 21px;
+    padding-bottom: 15px;
+}
+
+div.col-xs-12.input-wrapper {
+    padding-bottom: 15px;
+}
+
+div.col-xs-12.input-wrapper div.col-xs-12.col-md-8 div.col-xs-12.col-md-8,
+div.col-xs-12.input-wrapper div.col-xs-12.col-md-8 div.col-xs-12.col-md-6:first-of-type {
+    padding-right: 0px;
+}
+
+div.col-xs-12.input-wrapper:last-of-type {
+    padding-bottom: 25px;
+}
+
+div.col-xs-12.input-wrapper label {
+    font-size: 17px;
+    padding-right: 15px;
+    min-width: 250px;
+    padding-top: 15px;
+}
+
+div.col-xs-12.input-wrapper label.p-l-0 {
+    padding-left: 0px;
+}
+
+div.dropdown button.btn.btn-default {
+    width: 100%;
+    text-align: left;
+    height: 60px;
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    background-image: none;
+    box-shadow: none;
+    color: #8f9092;
+    border-radius: 3px;
+    font-size: 17px;
+}
+
+div.input-wrapper div.dropdown.open ul.dropdown-menu { 
+    min-width: 100%; 
+    box-shadow: none; 
+    border-color: #ecedef; 
+    margin-top: 5px; 
+} 
+
+div.input-wrapper div.dropdown.open ul.dropdown-menu li a {
+    padding-left:12px;
+    padding-right: 12px;
+    color: #999999;
+    font-size: 17px;
+}
+
+.file-input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.file-input:focus {
+     outline: none;
+}
+
+div.p-info-wrapper input#add-image {
+    width: 100px;
+    height: 100px;
+}
+
+div.p-info-wrapper div.user-profile div.u-info-wrapper {
+    vertical-align: middle;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: inline-block;
+}
+
+div.p-info-wrapper div.user-profile div.u-info-wrapper div {
+    display: inline-block;
+}
+
+div.p-info-wrapper div.btn-wrapper {
+    padding-top: 25px;
+}
+
+div.p-info-wrapper div.btn-wrapper button.btn {
+    height: 50px;
+    font-size: 17px;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+}
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+  background-color: #ffffff !important;
+}
+
+input:-webkit-autofill, input:-webkit-autofill:focus, input:-webkit-autofill:active, input:-webkit-autofill:hover {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+}
+
+.input-validation-color, .input-validation-color:focus, .input-validation-color:active {
+    border-color: #fc9299;
+}
+
+@media screen and (max-width: 768px) { 
+    
+    /*section landing*/
+    div#content-wrapper.container-fluid div.right-wrapper h1 {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        text-align: center;
+    }
+    
+    div.right-wrapper div.controls-wrapper div.search-wrapper {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    
+    div.right-wrapper div.list-wrapper ul {
+        padding-top: 0px;
+    }
+    
+    div.right-wrapper div.list-wrapper ul li {
+        margin-bottom: 15px;
+    }
+    
+    div.right-wrapper div.list-wrapper ul li div.u-info-wrapper div.i-title {
+        font-size: 14px;
+    }
+    
+    div.pagination-wrapper ul.pagination {
+        padding: 15px 15px 0px 15px;
+    }
+    
+    /*section details page*/
+    div.p-info-wrapper div.user-profile {
+        padding-bottom: 15px;
+    }
+    
+    div.p-info-wrapper div.row.p-l-50 {
+        padding-left: 0px;
+    }
+    
+    div.p-info-wrapper div.btn-wrapper {
+        padding-top: 15px;
+    }
+    
+}
+
+@media screen and (max-width: 480px) {
+    
+    div.p-info-wrapper div.user-profile div.u-info-wrapper div:first-child {
+        padding-bottom: 15px;
+    }
+    
+}
+
+@media screen and (max-width: 768px) { 
+    
+    div.p-info-wrapper div.btn-wrapper {
+        padding-top: 15px;
+    }
+    
+}
+
+@media screen and (max-width: 992px) {
+    
+    /*section details page*/
+    div.col-xs-12.input-wrapper input {
+        width: 100%;
+    }
+    
+    div.col-xs-12.input-wrapper label {
+        padding-top: 0px;
+    }
+    
+    div.dropdown {
+        min-width: 100%;
+        margin-top: 15px;
+    }
+    
+    div.col-xs-12.input-wrapper div.col-xs-12.col-md-8 div.col-xs-12.col-md-8 {
+        padding-right: 15px;
+    }
+    
+    div.p-info-wrapper div.user-profile div.u-info-wrapper {
+        padding-top: 25px;
+        text-align: center;
+        display: block;
+    }
+    
+    div.p-info-wrapper div.user-profile div.profile-img-wrapper {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    div.col-xs-12.input-wrapper label.s-val2 {
+        padding-top: 15px;
+    }
+    
+    div.col-xs-12.input-wrapper div.col-xs-12.col-md-8 div.col-xs-12.col-md-8,
+    div.col-xs-12.input-wrapper div.col-xs-12.col-md-8 div.col-xs-12.col-md-6:first-of-type {
+        padding-right: 15px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+   
+    div.p-info-wrapper div.btn-wrapper {
+        padding-top: 25px;
+    }
+    
+}

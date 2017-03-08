@@ -1,0 +1,49 @@
+div.right-wrapper div.list-wrapper ul li div.rating-wrapper,
+div.right-wrapper div.list-wrapper ul li div.r-icon,
+div.right-wrapper div.list-wrapper ul li div.r-info {
+    display: table-cell;
+}
+
+div.right-wrapper div.list-wrapper ul li div.rating-wrapper {
+    padding-right: 25px;
+    vertical-align: middle;
+}
+
+div.right-wrapper div.list-wrapper ul li div.r-info {
+    vertical-align: middle;
+    padding-left: 10px;
+}
+
+div.right-wrapper div.list-wrapper ul li div.r-info div.r-type {
+    color: #999999;
+}
+
+div.right-wrapper div.list-wrapper ul li div.r-info div.r-value {
+    font-size: 17px;
+}
+
+@media screen and (max-width: 768px) {
+       
+    div.right-wrapper div.list-wrapper ul li div.r-icon,
+    div.right-wrapper div.list-wrapper ul li div.r-info {
+        display: inline-block;
+    }
+
+    div.right-wrapper div.list-wrapper ul li div.r-info {
+        padding: 0px;
+    }
+    
+    div.right-wrapper div.list-wrapper ul li div.rating-wrapper {
+        text-align: center;
+        padding-right: 10px;
+    }
+    
+    div.right-wrapper div.list-wrapper ul li div.rating-wrapper img {
+        width: 25px;
+        height: 25px;
+
+    }
+    
+}
+
+
