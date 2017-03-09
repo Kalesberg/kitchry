@@ -1,0 +1,128 @@
+{% extends "layout.html" %}
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/common.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/mealplan.css') }}">
+{% endblock %}
+{% block title %}Meal Plan{% endblock %}
+        {% block content %}
+            <div class="p-info-wrapper">
+                <div class="user-profile p-b">
+                    <div class="profile-img-wrapper text-center center-block">
+                        <input id="add-image" type="file" name="image" class="file-input"/>
+                    </div>
+                    <div class="u-info-wrapper">
+                        <div><strong>Enjoy your life diet</strong></div>
+                        <div class="text-capitalize">by dr. d. hooper</div>
+                    </div>
+                </div>
+                
+
+                <div class="s-wrapper p-t s-w-preview">
+                    
+                    <div class="p-info-t">Below you find a meal plan created by kitchry. If you want you can share this with your client.</div>
+
+                    <div class="segment-title">
+                        <strong class="text-capitalize">meal plan</strong>
+                    </div>
+                    
+                    <ul class="meals-list ml-preview">
+                        <li>
+                            <div class="s-info-wrapper">
+                                
+                                <div class="s-title text-capitalize">
+                                    breakfast (489 calories)
+                                </div>
+                                
+                                <div class="s-meal-wrapper">
+                                    <div class="s-ingredients">
+                                        <div class="s-i-title text-capitalize">
+                                            avocado egg tost
+                                        </div>
+                                        <ul class="s-i-list">
+                                            <li>2 eggs</li>
+                                            <li>2 slices whole grain bread</li>
+                                            <li>⅓ avocado</li>
+                                            <li>2 tablespoons shaved Parmesan cheese</li>
+                                            <li>salt and pepper for topping</li>
+                                            <li>fresh herbs (parsley, thyme, or basil) for topping</li>
+                                            <li>quartered heirloom tomatoes for serving</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                              
+                            </div>
+                       
+                        </li>
+                        
+                        <li>
+                            <div class="s-info-wrapper">
+                                
+                                <div class="s-title text-capitalize">
+                                    morning snack (305 calories)
+                                </div>
+                                
+                                <div class="s-meal-wrapper">
+                                    <div class="s-ingredients">
+                                        <ul class="s-i-list">
+                                            <li>2 eggs</li>
+                                            <li>2 slices whole grain bread</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                         
+                            </div>
+                            
+                        </li>
+                        
+                        <li>
+                            <div class="s-info-wrapper">
+                                
+                                <div class="s-title text-capitalize">
+                                    lunch (508 calories)
+                                </div>
+                                
+                                <div class="s-meal-wrapper">
+                                    <div class="s-ingredients">
+                                        <div class="s-i-title text-capitalize">
+                                            avocado egg tost
+                                        </div>
+                                        <ul class="s-i-list">
+                                            <li>2 eggs</li>
+                                            <li>2 slices whole grain bread</li>
+                                            <li>⅓ avocado</li>
+                                            <li>2 tablespoons shaved Parmesan cheese</li>
+                                            <li>salt and pepper for topping</li>
+                                            <li>fresh herbs (parsley, thyme, or basil) for topping</li>
+                                            <li>quartered heirloom tomatoes for serving</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                            </div>
+             
+                        </li>
+                        
+                    </ul>
+    
+                </div> 
+                
+                <div class="btn-wrapper">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <button id="share" type="submit" name="share" class="btn btn-green text-capitalize">
+                                save and share
+                            </button>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <button id="shareAll" type="submit" name="shareAll" class="btn btn-green text-capitalize">
+                                save and share all
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+        {% endblock %}
+{% block scripts %}
+{% endblock %}

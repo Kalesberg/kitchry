@@ -1,0 +1,616 @@
+{% extends "layout.html" %}
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/lib/select2.min.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/common.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/diet_info.css') }}">
+{% endblock %}
+{% block title %}{{ diet.name }} Diet{% endblock %}
+        {% block content %}
+        <form action="{{ url_for('diet', slug=diet.slug) }}" method="POST" enctype="multipart/form-data">
+            <div class="p-info-wrapper">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+            {% endif %}
+        {% endwith %}        
+                <div class="user-profile p-b">
+                    <div class="profile-img-wrapper text-center center-block">
+                        <img src="{{ diet.photo }}" />
+                        <input id="add-image" type="file" name="image" class="file-input"/>
+                    </div>
+                    <div class="u-info-wrapper text-center">
+                        <div class="username text-capitalize">
+                            <input id="diet-name" name="name" class="form-control" placeholder="Add Diet Name" type="text" value="{{ diet.name }}" autocomplete="off">
+                        </div>
+                        <div class="email text-capitalize">
+                            <input id="dieticians-name" name="dietician" class="form-control" placeholder="Add Dieticians Name" type="text" value="{{ diet.dietician }}" autocomplete="off">
+                        </div>
+                    </div>
+
+                </div>
+                      
+                <div class="s-wrapper p-t">
+                    
+                    <div class="row">
+                        <div class="col-xs-12 input-wrapper f-r">
+                            <div class="row">
+                                <div class="col-xs-12 col-md-4">
+                                    <label class="text-capitalize">food restrictions:</label>
+                                </div> 
+                                <div class="col-xs-12 col-md-8 p-l-50">
+                                    <select class="food-tags form-control" name="restrict" multiple="">
+                                        <option value="carrot" {% if 'carrot' in diet.restrict %} selected="selected" {% endif %}>carrot</option>
+                                        <option value="french_fries" {% if 'french_fries' in diet.restrict %} selected="selected" {% endif %}>french fries</option>
+                                        <option value="pizza" {% if 'pizza' in diet.restrict %} selected="selected" {% endif %}>pizza</option>
+                                    </select>
+                                </div>    
+                            </div> 
+                        </div>
+                    </div>
+                    
+                </div> 
+                
+                <div class="s-wrapper p-t">
+                    
+                    <div class="row">
+                        
+                        <div class="col-xs-12 input-wrapper">
+                            <div class="row">
+                                <div class="col-xs-12 col-md-4">
+                                    <label class="text-capitalize">daily calorie intake:</label>
+                                </div> 
+                                <div class="col-xs-12 col-md-8 p-l-50">
+                                    <input id="d-c-i" name="intake" class="form-control" placeholder="Add Value" type="text" value="{{ diet.intake }}" autocomplete="off">   
+                                </div>    
+                            </div> 
+                        </div>
+                      
+                    </div>    
+                    
+                </div>
+                        
+                <div class="s-wrapper p-t macronutritients-wrapper">
+                    
+                    <div class="segment-title">
+                        <strong class="text-capitalize">macronutritients</strong>
+                    </div>
+                                        
+                    <div class="row p-l-50">
+                        
+                        <div class="col-xs-12 input-wrapper">
+                            <div class="row">
+                                <div class="col-xs-12 col-md-4">
+                                   <label class="text-capitalize" data-toggle="collapse" href="#carbohydrates-expand" aria-expanded="false" aria-controls="carbohydrates-expand"><img src="{{ url_for('static', filename='images/icons/plus.svg') }}" width="20" height="20"/>carbohydrates:</label>
+                                </div> 
+                                <div class="col-xs-12 col-md-8">
+                                    <input id="carbohydrates" name="carbohydrates" class="form-control" placeholder="Add Value" type="text"  value="{{ diet.carbohydrates[0] }}" autocomplete="off"> 
+                                </div>    
+                            </div> 
+                        </div>
+                       
+                        <div class="collapse" id="carbohydrates-expand">
+                            <div class="i-list-wrapper">
+                                
+                                <div class="col-xs-12 input-wrapper">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-4">
+                                            <label class="text-capitalize">simple sugars:</label>
+                                        </div> 
+                                        <div class="col-xs-12 col-md-8">
+                                             <input id="s-s" name="carbohydrates" class="form-control" placeholder="Add Value" type="text" value="{{ diet.carbohydrates[1] }}" autocomplete="off">
+                                        </div>    
+                                    </div> 
+                                </div>
+                                
+                               <div class="col-xs-12 input-wrapper">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-4">
+                                            <label class="text-capitalize">glucose:</label>
+                                        </div> 
+                                        <div class="col-xs-12 col-md-8">
+                                             <input id="glucose" name="carbohydrates" class="form-control" placeholder="Add Value" type="text" value="{{ diet.carbohydrates[2] }}" autocomplete="off">
+                                        </div>    
+                                    </div> 
+                                </div>
+                                
+                                <div class="col-xs-12 input-wrapper">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-4">
+                                            <label class="text-capitalize">fructose:</label>
+                                        </div> 
+                                        <div class="col-xs-12 col-md-8">
+                                             <input id="fructose" name="carbohydrates" class="form-control" placeholder="Add Value" type="text" value="{{ diet.carbohydrates[3] }}" autocomplete="off">
+                                        </div>    
+                                    </div> 
+                                </div>
+                                
+                                <div class="col-xs-12 input-wrapper">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-4">
+                                            <label class="text-capitalize">galactose:</label>
+                                        </div> 
+                                        <div class="col-xs-12 col-md-8">
+                                             <input id="galactose" name="carbohydrates" class="form-control" placeholder="Add Value" type="text" value="{{ diet.carbohydrates[4] }}" autocomplete="off">
+                                        </div>    
+                                    </div> 
+                                </div>
+                                
+                                <div class="col-xs-12 input-wrapper">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-4">
+                                            <label class="text-capitalize">lactose:</label>
+                                        </div> 
+                                        <div class="col-xs-12 col-md-8">
+                                             <input id="lactose" name="carbohydrates" class="form-control" placeholder="Add Value" type="text" value="{{ diet.carbohydrates[5] }}" autocomplete="off">
+                                        </div>    
+                                    </div> 
+                                </div>
+                                
+                               <div class="col-xs-12 input-wrapper">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-4">
+                                            <label class="text-capitalize">sucrose:</label>
+                                        </div> 
+                                        <div class="col-xs-12 col-md-8">
+                                             <input id="sucrose" name="carbohydrates" class="form-control" placeholder="Add Value" type="text" value="{{ diet.carbohydrates[6] }}" autocomplete="off">
+                                        </div>    
+                                    </div> 
+                                </div>
+                                
+                                <div class="col-xs-12 input-wrapper">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-4">
+                                            <label class="text-capitalize">maltose:</label>
+                                        </div> 
+                                        <div class="col-xs-12 col-md-8">
+                                             <input id="maltose" name="carbohydrates" class="form-control" placeholder="Add Value" type="text" value="{{ diet.carbohydrates[7] }}" autocomplete="off">
+                                        </div>    
+                                    </div> 
+                                </div>
+                                
+                               <div class="col-xs-12 input-wrapper">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-4">
+                                            <label class="text-capitalize p-l-0">complex carbohydrates:</label>
+                                        </div> 
+                                        <div class="col-xs-12 col-md-8">
+                                             <input id="c-c" name="carbohydrates" class="form-control" placeholder="Add Value" type="text" value="{{ diet.carbohydrates[8] }}" autocomplete="off">
+                                        </div>    
+                                    </div> 
+                                </div>
+                                
+                               <div class="col-xs-12 input-wrapper">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-4">
+                                            <label class="text-capitalize">starch:</label>
+                                        </div> 
+                                        <div class="col-xs-12 col-md-8">
+                                             <input id="starch" name="carbohydrates" class="form-control" placeholder="Add Value" type="text" value="{{ diet.carbohydrates[9] }}" autocomplete="off">
+                                        </div>    
+                                    </div> 
+                                </div>
+                                
+                              </div>
+                        </div>
+                        
+                        <div class="col-xs-12 input-wrapper">
+                            <div class="row">
+                                <div class="col-xs-12 col-md-4">
+                                    <label class="text-capitalize" data-toggle="collapse" href="#protein-expand" aria-expanded="false" aria-controls="protein-expand"><img src="{{ url_for('static', filename='images/icons/plus.svg') }}" width="20" height="20"/>protein:</label>
+                                </div> 
+                                <div class="col-xs-12 col-md-8">
+                                    <input id="protein" name="protein" class="form-control" placeholder="Add Value" type="text" value="{{ diet.protein[0] }}" autocomplete="off">
+                                </div>    
+                            </div> 
+                        </div>
+                        
+                        <div class="collapse" id="protein-expand">
+                            <div class="i-list-wrapper">
+                                
+                                <div class="col-xs-12 input-wrapper">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-4">
+                                            <label class="text-capitalize p-l-0">non essential amino acids:</label>
+                                        </div> 
+                                        <div class="col-xs-12 col-md-8">
+                                             <input id="ne-a-a" name="protein" class="form-control" placeholder="Add Value" type="text" value="{{ diet.protein[1] }}" autocomplete="off">
+                                        </div>    
+                                    </div> 
+                                </div>
+                                
+                                <div class="col-xs-12 input-wrapper">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-4">
+                                            <label class="text-capitalize p-l-0">essential amino acids:</label>
+                                        </div> 
+                                        <div class="col-xs-12 col-md-8">
+                                             <input id="e-a-a" name="protein" class="form-control" placeholder="Add Value" type="text" value="{{ diet.protein[2] }}" autocomplete="off">
+                                        </div>    
+                                    </div> 
+                                </div>
+                                
+                                <div class="col-xs-12 input-wrapper">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-4">
+                                            <label class="text-capitalize">histidine:</label>
+                                        </div> 
+                                        <div class="col-xs-12 col-md-8">
+                                             <input id="histidine" name="protein" class="form-control" placeholder="Add Value" type="text" value="{{ diet.protein[3] }}" autocomplete="off">
+                                        </div>    
+                                    </div> 
+                                </div>
+                                
+                                <div class="col-xs-12 input-wrapper">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-4">
+                                             <label class="text-capitalize">isoleucine:</label>
+                                        </div> 
+                                        <div class="col-xs-12 col-md-8">
+                                             <input id="isoleucine" name="protein" class="form-control" placeholder="Add Value" type="text" value="{{ diet.protein[4] }}" autocomplete="off">
+                                        </div>    
+                                    </div> 
+                                </div>
+                                
+                                <div class="col-xs-12 input-wrapper">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-4">
+                                             <label class="text-capitalize">leucine:</label>
+                                        </div> 
+                                        <div class="col-xs-12 col-md-8">
+                                             <input id="leucine" name="protein" class="form-control" placeholder="Add Value" type="text" value="{{ diet.protein[5] }}" autocomplete="off">
+                                        </div>    
+                                    </div> 
+                                </div>
+                                
+                               <div class="col-xs-12 input-wrapper">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-4">
+                                             <label class="text-capitalize">lysine:</label>
+                                        </div> 
+                                        <div class="col-xs-12 col-md-8">
+                                             <input id="lysine" name="protein" class="form-control" placeholder="Add Value" type="text" value="{{ diet.protein[6] }}" autocomplete="off">
+                                        </div>    
+                                    </div> 
+                                </div>
+                                
+                                <div class="col-xs-12 input-wrapper">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-4">
+                                             <label class="text-capitalize">methionine:</label>
+                                        </div> 
+                                        <div class="col-xs-12 col-md-8">
+                                             <input id="methionine" name="protein" class="form-control" placeholder="Add Value" type="text" value="{{ diet.protein[7] }}" autocomplete="off">
+                                        </div>    
+                                    </div> 
+                                </div>
+                                
+                                <div class="col-xs-12 input-wrapper">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-4">
+                                             <label class="text-capitalize">phenylalanine:</label>
+                                        </div> 
+                                        <div class="col-xs-12 col-md-8">
+                                             <input id="phenylalanine" name="protein" class="form-control" placeholder="Add Value" type="text" value="{{ diet.protein[8] }}" autocomplete="off">
+                                        </div>    
+                                    </div> 
+                                </div>
+                                
+                                <div class="col-xs-12 input-wrapper">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-4">
+                                             <label class="text-capitalize">threonine:</label>
+                                        </div> 
+                                        <div class="col-xs-12 col-md-8">
+                                             <input id="threonine" name="protein" class="form-control" placeholder="Add Value" type="text" value="{{ diet.protein[9] }}" autocomplete="off">
+                                        </div>    
+                                    </div> 
+                                </div>
+                                
+                               <div class="col-xs-12 input-wrapper">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-4">
+                                             <label class="text-capitalize">tryptophan:</label>
+                                        </div> 
+                                        <div class="col-xs-12 col-md-8">
+                                             <input id="tryptophan" name="protein" class="form-control" placeholder="Add Value" type="text" value="{{ diet.protein[10] }}" autocomplete="off">
+                                        </div>    
+                                    </div> 
+                                </div>
+                                
+                               <div class="col-xs-12 input-wrapper">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-4">
+                                             <label class="text-capitalize">valine:</label>
+                                        </div> 
+                                        <div class="col-xs-12 col-md-8">
+                                             <input id="valine" name="protein" class="form-control" placeholder="Add Value" type="text" value="{{ diet.protein[11] }}" autocomplete="off">
+                                        </div>    
+                                    </div> 
+                                </div>
+                                
+                            </div>
+                        </div> 
+                        
+                        <div class="col-xs-12 input-wrapper">
+                            <div class="row">
+                                <div class="col-xs-12 col-md-4">
+                                     <label class="text-capitalize" data-toggle="collapse" href="#fats-expand" aria-expanded="false" aria-controls="fats-expand"><img src="{{ url_for('static', filename='images/icons/plus.svg') }}" width="20" height="20"/>fats:</label>
+                                </div> 
+                                <div class="col-xs-12 col-md-8">
+                                    <input id="n-fats" name="fats" class="form-control" placeholder="Add Value" type="text" value="{{ diet.fats[0] }}" autocomplete="off">
+                                </div>    
+                            </div> 
+                        </div>       
+                        
+                        <div class="collapse" id="fats-expand">
+                            <div class="i-list-wrapper">
+                                
+                                <div class="col-xs-12 input-wrapper">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-4">
+                                             <label class="text-capitalize">saturated:</label>
+                                        </div> 
+                                        <div class="col-xs-12 col-md-8">
+                                             <input id="saturated" name="fats" class="form-control" placeholder="Add Value" type="text" value="{{ diet.fats[1] }}" autocomplete="off">
+                                        </div>    
+                                    </div> 
+                                </div>
+                                
+                               <div class="col-xs-12 input-wrapper">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-4">
+                                             <label class="text-capitalize">cholesterol:</label>
+                                        </div> 
+                                        <div class="col-xs-12 col-md-8">
+                                             <input id="cholesterol" name="fats" class="form-control" placeholder="Add Value" type="text" value="{{ diet.fats[2] }}" autocomplete="off">
+                                        </div>    
+                                    </div> 
+                                </div>
+                                
+                               <div class="col-xs-12 input-wrapper">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-4">
+                                             <label class="text-capitalize p-l-0">unsaturated:</label>
+                                        </div> 
+                                        <div class="col-xs-12 col-md-8">
+                                             <input id="unsaturated" name="fats" class="form-control" placeholder="Add Value" type="text" value="{{ diet.fats[3] }}" autocomplete="off">
+                                        </div>    
+                                    </div> 
+                                </div>
+                                
+                                <div class="col-xs-12 input-wrapper">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-4">
+                                             <label class="text-capitalize">monounsaturated:</label>
+                                        </div> 
+                                        <div class="col-xs-12 col-md-8">
+                                             <input id="monounsaturated" name="fats" class="form-control" placeholder="Add Value" type="text" value="{{ diet.fats[4] }}" autocomplete="off">
+                                        </div>    
+                                    </div> 
+                                </div>
+                                
+                                <div class="col-xs-12 input-wrapper">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-4">
+                                             <label class="text-capitalize">polyunsaturated:</label>
+                                        </div> 
+                                        <div class="col-xs-12 col-md-8">
+                                             <input id="polyunsaturated" name="fats" class="form-control" placeholder="Add Value" type="text" value="{{ diet.fats[5] }}" autocomplete="off">
+                                        </div>    
+                                    </div> 
+                                </div>
+                                
+                            </div>
+                        </div>  
+                    
+                    </div>
+                    
+                </div>
+             
+                <div class="s-wrapper p-t dv-wrapper">
+                    
+                    <div class="segment-title">
+                        <div class="row">
+                            <div class="col-md-4"><strong class="text-capitalize">daily values</strong></div>
+                            <div class="col-md-8 p-l-50">
+                                <div class="row hidden-xs hidden-sm">
+                                    <div class="col-md-6 text-center"><strong class="text-capitalize">percentage %</strong></div>
+                                    <div class="col-md-6 text-center"><strong class="text-capitalize">total calories</strong></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row p-l-50">
+                        
+                        <div class="col-xs-12 input-wrapper">
+                            <div class="row">
+                               
+                                <div class="col-xs-12 col-md-4">
+                                    <label class="text-capitalize">breakfast:</label>
+                                </div>
+                                 
+                                <div class="col-xs-12 col-md-8">
+                                    <div class="row">
+                                        
+                                        <div class="col-xs-12 col-md-6">
+                                            <label class="text-capitalize visible-xs visible-sm">percentage %:</label>
+                                            <input id="breakfast" name="breakfast" class="form-control" placeholder="Add Value" type="text" value="{{ diet.breakfast }}" autocomplete="off">
+                                        </div>
+                                        
+                                        <div class="col-xs-12 visible-xs visible-sm">
+                                             <label class="text-capitalize">total calories:</label>
+                                        </div> 
+                                        
+                                        <div class="col-xs-12 col-md-6 text-center t-c-v">
+                                            800
+                                        </div>
+                                        
+                                    </div>
+                                </div>    
+                            </div>    
+                        </div>
+                        
+                        <div class="col-xs-12 input-wrapper">
+                            <div class="row">
+                               
+                                <div class="col-xs-12 col-md-4">
+                                    <label class="text-capitalize">morning snack:</label>
+                                </div>
+                                 
+                                <div class="col-xs-12 col-md-8">
+                                    <div class="row">
+                                        
+                                        <div class="col-xs-12 col-md-6">
+                                            <label class="text-capitalize visible-xs visible-sm">percentage %:</label>
+                                            <input id="m-s" name="morningsnack" class="form-control" placeholder="Add Value" type="text" value="{{ diet.morningsnack }}" autocomplete="off">
+                                        </div>
+                                        
+                                        <div class="col-xs-12 visible-xs visible-sm">
+                                             <label class="text-capitalize">total calories:</label>
+                                        </div> 
+                                        
+                                        <div class="col-xs-12 col-md-6 text-center t-c-v">
+                                            800
+                                        </div>
+                                        
+                                    </div>
+                                </div>    
+                            </div>    
+                        </div>
+                        
+                        <div class="col-xs-12 input-wrapper">
+                            <div class="row">
+                               
+                                <div class="col-xs-12 col-md-4">
+                                    <label class="text-capitalize">lunch:</label>
+                                </div>
+                                 
+                                <div class="col-xs-12 col-md-8">
+                                    <div class="row">
+                                        
+                                        <div class="col-xs-12 col-md-6">
+                                            <label class="text-capitalize visible-xs visible-sm">percentage %:</label>
+                                            <input id="lunch" name="lunch" class="form-control" placeholder="Add Value" type="text" value="{{ diet.lunch }}" autocomplete="off">
+                                        </div>
+                                        
+                                        <div class="col-xs-12 visible-xs visible-sm">
+                                             <label class="text-capitalize">total calories:</label>
+                                        </div> 
+                                        
+                                        <div class="col-xs-12 col-md-6 text-center t-c-v">
+                                            800
+                                        </div>
+                                        
+                                    </div>
+                                </div>    
+                            </div>    
+                        </div>
+                        
+                        <div class="col-xs-12 input-wrapper">
+                            <div class="row">
+                               
+                                <div class="col-xs-12 col-md-4">
+                                    <label class="text-capitalize">evening snack:</label>
+                                </div>
+                                 
+                                <div class="col-xs-12 col-md-8">
+                                    <div class="row">
+                                        
+                                        <div class="col-xs-12 col-md-6">
+                                            <label class="text-capitalize visible-xs visible-sm">percentage %:</label>
+                                            <input id="e-s" name="eveningsnack" class="form-control" placeholder="Add Value" type="text" value="{{ diet.eveningsnack }}" autocomplete="off">
+                                        </div>
+                                        
+                                        <div class="col-xs-12 visible-xs visible-sm">
+                                             <label class="text-capitalize">total calories:</label>
+                                        </div> 
+                                        
+                                        <div class="col-xs-12 col-md-6 text-center t-c-v">
+                                            800
+                                        </div>
+                                        
+                                    </div>
+                                </div>    
+                            </div>    
+                        </div>
+                        
+                         <div class="col-xs-12 input-wrapper">
+                            <div class="row">
+                               
+                                <div class="col-xs-12 col-md-4">
+                                    <label class="text-capitalize">dinner:</label>
+                                </div>
+                                 
+                                <div class="col-xs-12 col-md-8">
+                                    <div class="row">
+                                        
+                                        <div class="col-xs-12 col-md-6">
+                                            <label class="text-capitalize visible-xs visible-sm">percentage %:</label>
+                                            <input id="dinner" name="dinner" class="form-control" placeholder="Add Value" type="text" value="{{ diet.dinner }}" autocomplete="off">
+                                        </div>
+                                        
+                                        <div class="col-xs-12 visible-xs visible-sm">
+                                             <label class="text-capitalize">total calories:</label>
+                                        </div> 
+                                        
+                                        <div class="col-xs-12 col-md-6 text-center t-c-v">
+                                            800
+                                        </div>
+                                        
+                                    </div>
+                                </div>    
+                            </div>    
+                        </div>
+                        
+                        <div class="col-xs-12 input-wrapper">
+                            <div class="row">
+                               
+                                <div class="col-xs-12 col-md-4">
+                                    <label class="text-capitalize">total:</label>
+                                </div>
+                                 
+                                <div class="col-xs-12 col-md-8">
+                                    <div class="row">
+                        
+                                        <div class="col-xs-12 col-md-6 text-center pull-right">
+                                            <strong class="t-c-total">10000</strong>
+                                        </div>
+                                        
+                                    </div>
+                                </div>    
+                            </div>    
+                        </div>
+                     
+                    </div>    
+                
+                </div> 
+                
+                
+                <div class="btn-wrapper">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <button id="saveInfo" type="submit" name="save" class="btn btn-green text-capitalize">
+                                save and use kitchry for diet plan
+                            </button>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <a href="/mealplan" role="button" id="saveYourDp" type="submit" name="savenew" class="btn btn-green text-capitalize">
+                                save and create your own diet plan
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <input type="hidden" name="id" value="{{ diet.id }}" />
+        </form>
+        {% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='scripts/lib/select2.full.min.js') }}"></script>
+<script src="{{ url_for('static', filename='scripts/views/diet_details.js') }}"></script>
+{% endblock %}

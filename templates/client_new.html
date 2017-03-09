@@ -1,0 +1,276 @@
+{% extends "layout.html" %}
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/lib/bootstrap-datetimepicker.min.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/common.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/client_info.css') }}">
+{% endblock %}
+{% block title %}New Client{% endblock %}
+        {% block content %}
+        <form action="{{ url_for('client_new') }}" method="POST" enctype="multipart/form-data">
+            <div class="p-info-wrapper">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+            {% endif %}
+        {% endwith %}
+                <div class="user-profile p-b">
+                    <div class="profile-img-wrapper text-center center-block">
+                        <input id="add-image" type="file" name="image" class="file-input"/>
+                    </div>
+                    <div class="u-info-wrapper text-center">
+                        <div class="username text-capitalize">
+                            <input id="user-name" name="name" class="form-control" placeholder="Add Name" type="text" autocomplete="off">
+                        </div>
+                        <div class="email text-capitalize">
+                            <input id="email" name="email" class="form-control" placeholder="Add Email" type="text" autocomplete="off">
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="s-wrapper p-t text-center s-w">
+                    <strong class="text-uppercase">us</strong>
+                    <div class="switch">                                    
+                        <input id="m-value" name="m-value" class="s-toggle s-toggle-round" type="checkbox">
+                        <label for="m-value"></label>
+                    </div>
+                    <strong class="text-capitalize">metric</strong>
+                </div>
+                        
+                <div class="s-wrapper p-t">
+                    
+                    <div class="segment-title">
+                        <strong class="text-capitalize">general info</strong>
+                    </div>
+                                        
+                    <div class="row p-l-50">
+                        
+                        <div class="col-xs-12 input-wrapper">
+                            <div class="row">
+                                <div class="col-xs-12 col-md-4">
+                                    <label class="text-capitalize">age:</label>
+                                </div> 
+                                <div class="col-xs-12 col-md-8">
+                                    <input id="user-age" name="age" class="form-control" placeholder="Add Age" type="text" autocomplete="off">   
+                                </div>    
+                            </div> 
+                        </div>
+                        
+                        <div class="col-xs-12 input-wrapper height-wrapper">
+                            <div class="row">
+                                <div class="col-xs-12 col-md-4">
+                                    <label class="text-capitalize">height:</label>
+                                </div> 
+                                <div class="col-xs-12 col-md-8">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-6">
+                                            <label class="text-capitalize s-val1">feet:</label>
+                                            <input id="user-height-v1" name="height" class="form-control" placeholder="Value" type="text" autocomplete="off">
+                                        </div>
+                                        <div class="col-xs-12 col-md-6">
+                                            <label class="text-capitalize s-val2">inch:</label>
+                                            <input id="user-height-v2" name="height1" class="form-control" placeholder="Value" type="text" autocomplete="off">
+                                        </div>
+                                    </div>
+                                </div>    
+                            </div>    
+                        </div>
+                        
+                        <div class="col-xs-12 input-wrapper weight-wrapper">
+                            <div class="row">
+                                <div class="col-xs-12 col-md-4">
+                                    <label class="text-capitalize">weight:</label>
+                                </div> 
+                                <div class="col-xs-12 col-md-8">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-6">
+                                            <label class="text-capitalize s-val1">pounds:</label>
+                                            <input id="user-weight-v1" name="weight" class="form-control" placeholder="Value" type="text" autocomplete="off">
+                                        </div>
+                                        <div class="col-xs-12 col-md-6">
+                                            <label class="text-capitalize s-val2">ounces:</label>
+                                            <input id="user-weight-v2" name="weight1" class="form-control" placeholder="Value" type="text" autocomplete="off">
+                                        </div>
+                                    </div>
+                                </div>    
+                            </div>    
+                        </div>
+                        
+                        <div class="col-xs-12 input-wrapper">
+                            <div class="row">
+                                <div class="col-xs-12 col-md-4">
+                                    <label class="text-capitalize">bmi:</label>
+                                </div> 
+                                <div class="col-xs-12 col-md-8">
+                                    <input id="user-bmi" name="bmi" class="form-control" placeholder="Add BMI" type="text" value="" autocomplete="off">   
+                                </div>    
+                            </div> 
+                        </div>
+                        
+                         <div class="col-xs-12 input-wrapper">
+                            <div class="row">
+                                <div class="col-xs-12 col-md-4">
+                                    <label class="text-capitalize">body fat %:</label>
+                                </div> 
+                                <div class="col-xs-12 col-md-8">
+                                    <input id="user-body-fat" name="user-body-fat" class="form-control" placeholder="Add Value" type="text" value="" autocomplete="off">   
+                                </div>    
+                            </div> 
+                        </div>
+                                            
+                    </div>
+                    
+                </div>
+             
+                <div class="s-wrapper p-t goals">
+                    
+                    <div class="segment-title">
+                        <strong class="text-capitalize">goals</strong>
+                    </div>
+                    
+                    <div class="row p-l-50">
+                        
+                         <div class="col-xs-12 input-wrapper">
+                            <div class="row">
+                                <div class="col-xs-12 col-md-4">
+                                    <label class="text-capitalize">title:</label>
+                                </div> 
+                                <div class="col-xs-12 col-md-8">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-8">
+                                            <input id="goal" name="goal" class="form-control" placeholder="Add Goal" type="text" autocomplete="off">
+                                        </div>
+                                        <div class="col-xs-12 col-md-4">
+                                            <div class="dropdown">
+                                                <input class="dropdown-value" id="goal-unit" name="goal-unit" type="hidden" value="">
+                                                <button id="select-goal-u" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" value="status" class="btn btn-default dropdown-toggle"><span class="pull-left">Unit</span><span class="caret pull-right"></span></button>
+                                                <ul aria-labelledby="select-goal-u" class="dropdown-menu">
+                                                    <li><a href="#" class="text-capitalize" data-value="lbs">lbs</a></li>
+                                                    <li><a href="#" class="text-capitalize" data-value="kg">kg</a></li>
+                                                    <li><a href="#" class="text-capitalize" data-value="inch">inch</a></li>
+                                                    <li><a href="#" class="text-capitalize" data-value="cm">cm</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>    
+                            </div>    
+                        </div>
+                        
+                        <div class="col-xs-12 input-wrapper">
+                            <div class="row">
+                                <div class="col-xs-12 col-md-4">
+                                    <label class="text-capitalize">start date:</label>
+                                </div> 
+                                <div class="col-xs-12 col-md-8">
+                                    <div class="form-group">
+                                      <div class="date-wrapper input-group date">
+                                          <input id="goal-start-date" name="startdate" class="form-control" placeholder="Select Start Date" type="text" autocomplete="off"> 
+                                          <span class="input-group-addon">
+                                              <span class="glyphicon glyphicon-calendar"></span>
+                                          </span>
+                                      </div>
+                                    </div>
+                                </div>    
+                            </div> 
+                        </div>
+                        
+                         <div class="col-xs-12 input-wrapper">
+                            <div class="row">
+                                <div class="col-xs-12 col-md-4">
+                                    <label class="text-capitalize">end date:</label>
+                                </div> 
+                                <div class="col-xs-12 col-md-8">
+                                    <div class="form-group">
+                                      <div class="date-wrapper input-group date">
+                                          <input id="goal-end-date" name="enddate" class="form-control" placeholder="Select End Date" type="text" autocomplete="off">
+                                          <span class="input-group-addon">
+                                              <span class="glyphicon glyphicon-calendar"></span>
+                                          </span>
+                                      </div>
+                                    </div>
+                                </div>    
+                            </div> 
+                        </div>
+                        
+                        <div class="col-xs-12 input-wrapper">
+                            <div class="row">
+                                <div class="col-xs-12 col-md-4">
+                                    <label class="text-capitalize">outcome:</label>
+                                </div> 
+                                <div class="col-xs-12 col-md-8">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-8">
+                                            <input id="goal-outcome" name="outcome" class="form-control" placeholder="Outcome" type="text" autocomplete="off">
+                                        </div>
+                                        <div class="col-xs-12 col-md-4">
+                                            <div class="dropdown">
+                                                 <input class="dropdown-value" id="outcome-unit" name="outcome-unit" type="hidden" value="">
+                                                <button id="select-outcome-u" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" value="status" class="btn btn-default dropdown-toggle"><span class="pull-left">Unit</span><span class="caret pull-right"></span></button>
+                                                <ul aria-labelledby="select-outcome-u" class="dropdown-menu">
+                                                    <li><a href="#" class="text-capitalize" data-value="lbs">lbs</a></li>
+                                                    <li><a href="#" class="text-capitalize" data-value="kg">kg</a></li>
+                                                    <li><a href="#" class="text-capitalize" data-value="inch">inch</a></li>
+                                                    <li><a href="#" class="text-capitalize" data-value="cm">cm</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>    
+                            </div>    
+                        </div>
+                        
+                    </div>    
+                
+                </div> 
+                
+                <div class="s-wrapper p-t">
+                    
+                    <div class="segment-title">
+                        <strong class="text-capitalize">diet plan</strong>
+                    </div>
+                    
+                    <div class="row p-l-50">
+            
+                         <div class="col-xs-12 input-wrapper">
+                            <div class="row">
+                                <div class="col-xs-12 col-md-4">
+                                    <label class="text-capitalize">assigned diet:</label>
+                                </div> 
+                                <div class="col-xs-12 col-md-8">
+                                    <div class="dropdown">
+                                        <input class="dropdown-value" id="asssigned-diet" name="asssigned-diet" type="hidden" value="">
+                                        <button id="select-a-d-u" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" value="status" class="btn btn-default dropdown-toggle"><span class="pull-left">Select Diet</span><span class="caret pull-right"></span></button>
+                                        <ul aria-labelledby="select-a-d-u" class="dropdown-menu">
+                                        {% for diet in diets %}
+                                            <li><a href="#" class="text-capitalize" data-value="{{ diet.id }}">{{ diet.name }}</a></li>
+                                        {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>    
+                            </div>    
+                        </div>
+                        
+                    </div>    
+                    
+                </div> 
+                
+                
+                <div class="btn-wrapper text-center">
+                    <button id="saveInfo" type="submit" class="btn btn-green text-capitalize">
+                        <img src="{{ url_for('static', filename='images/icons/tick-w.svg') }}" width="20" height="20">save
+                    </button>
+                </div>
+
+            </div>
+        </form>
+        {% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='scripts/lib/moment.js') }}"></script>
+<script src="{{ url_for('static', filename='scripts/lib/bootstrap-datetimepicker.min.js') }}"></script>
+<script src="{{ url_for('static', filename='scripts/views/client_details.js') }}"></script>
+{% endblock %}

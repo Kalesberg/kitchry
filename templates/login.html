@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/lib/bootstrap.min.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/layout.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/login.css') }}">
+<title>Login</title>
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <form id="login-form" method="post" action="/login">
+                    <div class="login-wrapper">
+                        <div class="c-n-p">
+                            <a href="#" class="text-uppercase">create new profile</a>
+                        </div>
+                        <div class="icon-wrapper text-center">
+                             <img width="65" height="65" src="{{ url_for('static', filename='images/icons/avatar-w.svg') }}"/>
+                        </div>
+                        <div class="t-wrapper text-uppercase">
+                        log in <br>
+                        to your account
+                        </div>
+                        <div class="form-f-wrapper">
+                            <span class="form-control-feedback text-capitalize">
+                                <img width="25" height="25" src="{{ url_for('static', filename='images/icons/avatar-g.svg') }}"/>
+                                username
+                            </span>
+                            <input class="form-control" id="username" name="username" type="text" aria-label="username" autocomplete="off"/>
+                        </div>
+                        <div class="form-f-wrapper">
+                            <span class="form-control-feedback text-capitalize">
+                                <img width="25" height="25" src="{{ url_for('static', filename='images/icons/shield.svg') }}"/>
+                                password
+                            </span>
+                            <div class="input-group">
+                                <input id="password" name="password" type="password" aria-label="password" class="form-control" autocomplete="off"/>
+                                <span class="input-group-btn">
+                                    <button id="login" type="submit" class="btn btn-blank">
+                                        <img src="{{ url_for('static', filename='images/icons/login-arrow.svg') }}" width="25" height="25" alt="login"/>
+                                    </button>
+                                </span>
+                          </div>
+                        </div>
+                        <div class="f-p-wrapper text-capitalize"><a href="#">forgot password?</a></div>
+                    </div>
+                </form>    
+            </div>
+        </div>
+    </div>
+    
+<script src="{{ url_for('static', filename='scripts/lib/jquery-3.1.1.min.js') }}"></script>
+<script src="{{ url_for('static', filename='scripts/lib/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static', filename='scripts/app.js') }}"></script>  
+<script src="{{ url_for('static', filename='scripts/views/account/login.js') }}"></script>    
+</body> 
+</html>    
